@@ -1,12 +1,14 @@
 <?php
-class News
+class News extends Controller
 {
-    function SayHi()
+    function Default()
     {
-        echo "News - SayHi";
+        $nameList = $this->model('SinhVienModel');
+        echo $nameList->getSV();
     }
-    function SayHello()
+    function getWebsiteUrl()
     {
-        echo "News - SayHello";
+        $website = $this->model('SinhVienModel');
+        echo $website->getWebsiteUrl();
     }
 }

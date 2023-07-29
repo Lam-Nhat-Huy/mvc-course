@@ -1,13 +1,15 @@
 <?php
-class Home
+class Home extends Controller
 {
-    function SayHi()
+    function Default()
     {
-        echo "Home - SayHi";
+        $nameList = $this->model('SinhVienModel');
+        echo $nameList->getSV();
     }
-
-    function show()
+    function getImg()
     {
-        echo "Home - Show";
+        $model = $this->model('SinhVienModel');
+        $images = $model->getImageUrl();
+        $this->view('AoDepViews', ['ImageUrl' => $images]);
     }
 }

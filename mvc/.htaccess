@@ -1,0 +1,2 @@
+# Dùng để chặn không cho vào thư mục gốc mvc
+Options -Indexes

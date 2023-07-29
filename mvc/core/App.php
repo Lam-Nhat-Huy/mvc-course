@@ -2,19 +2,23 @@
 class App
 {
     protected $controller = 'Home';
-    protected $action = 'SayHi';
+    protected $action = 'Default';
     protected $params = [];
 
     function __construct()
     {
-        //  [0] => home [1] => show
+        //  [0] => home [1] => show [2] => params
         $arr = $this->UrlProcess();
-        // Xử lí controllers
+
+        // Xử lí controllers [0] => Home (Home/News/Product trong thư mục controllers)
         if (file_exists('./mvc/controllers/' . $arr[0] . '.php')) {
             $this->controller = $arr[0];
             unset($arr[0]);
         }
-        require_once('./mvc/controllers/' . $this->controller . '.php');
+        // Khi nhập không đúng controllers thì mặc định trả về $this->controller (protected $controller = 'home)
+        require_once './mvc/controllers/' . $this->controller . '.php';
+        $this->controller = new $this->controller;
+
         // Xử lí acction
         if (isset($arr[1])) {
             if (method_exists($this->controller, $arr[1])) {
@@ -22,6 +26,7 @@ class App
             }
             unset($arr[1]);
         }
+
         // Xử lí params
         if ($arr) {
             $this->params = array_values($arr);
