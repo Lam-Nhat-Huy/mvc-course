@@ -3,12 +3,12 @@ class News extends Controller
 {
     function Default()
     {
-        $nameList = $this->model('SinhVienModel');
-        echo $nameList->getSV();
+        $model = $this->model('SinhVienModel');
+        echo $model->getSV();
     }
     function getWebsiteUrl()
     {
-        $website = $this->model('SinhVienModel');
-        echo $website->getWebsiteUrl();
+        $model = $this->model('SinhVienModel');
+        echo $model->getWebsiteUrl();
     }
 }

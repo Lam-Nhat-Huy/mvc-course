@@ -3,13 +3,13 @@ class Product extends Controller
 {
     public function Default()
     {
-        $product = $this->model('SinhVienModel');
-        echo $product->getSV();
+        $model = $this->model('SinhVienModel');
+        echo $model->getSV();
     }
 
     public function Create()
     {
-        $product = $this->model('SinhVienModel');
-        echo $product->GetWebsiteUrl();
+        $model = $this->model('SinhVienModel');
+        echo $model->GetWebsiteUrl();
     }
 }

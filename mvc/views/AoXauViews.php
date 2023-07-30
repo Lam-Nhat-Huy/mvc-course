@@ -27,9 +27,6 @@
         require_once "./mvc/views/pages/" . $data['Pages'] . ".php"
         ?>
     </div>
-    <div id="footer">
-
-    </div>
     </p>
 </body>
 
