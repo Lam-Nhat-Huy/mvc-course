@@ -7,12 +7,13 @@ class Home extends Controller
         echo $model->getSV();
     }
 
-    function getImg()
+    function getImageUrl()
     {
         $model = $this->model('SinhVienModel');
         $images = $model->getImageUrl();
         $this->view('AoDepViews', [
             'Pages' => 'contact',
+            'Images' => $images,
             'Student' => $model->getStudent()
         ]);
     }

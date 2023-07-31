@@ -6,9 +6,9 @@ class News extends Controller
         $model = $this->model('SinhVienModel');
         echo $model->getSV();
     }
-    function getWebsiteUrl()
+    function getImageUrl()
     {
         $model = $this->model('SinhVienModel');
-        echo $model->getWebsiteUrl();
+        echo $model->getImageUrl();
     }
 }

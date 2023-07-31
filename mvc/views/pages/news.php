@@ -1,7 +1,5 @@
+<h2>Contact</h2>
+
 <?php
-while ($row = mysqli_fetch_array($data['Student'])) {
+echo $data['images'];
 ?>
-<?= $row['hoten'] ?>
-    <?php
-}
-    ?>
