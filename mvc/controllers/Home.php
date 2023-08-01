@@ -11,18 +11,18 @@ class Home extends Controller
     {
         $model = $this->model('SinhVienModel');
         $images = $model->getImageUrl();
-        $this->view('AoDepViews', [
+        $this->view('master1', [
             'Pages' => 'contact',
             'Images' => $images,
             'Student' => $model->getStudent()
         ]);
     }
-    function SinhVien()
+    function getStudent()
     {
         $model = $this->model('SinhVienModel');
         $student = $model->getStudent();
-        $this->view('AoDepViews', [
-            'Pages' => 'news',
+        $this->view('master1', [
+            'Pages' => 'home',
             'Student' => $student
         ]);
     }

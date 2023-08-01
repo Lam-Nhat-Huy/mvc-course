@@ -19,4 +19,10 @@ class SinhVienModel extends Database
         $selecte_student = 'SELECT * FROM sinhvien';
         return mysqli_query($this->conn, $selecte_student);
     }
+
+    function getNameStudent()
+    {
+        $selecte_name = 'SELECT hoten FROM sinhvien';
+        return mysqli_query($this->conn, $selecte_name);
+    }
 }
